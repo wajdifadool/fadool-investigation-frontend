@@ -111,6 +111,9 @@ ul {
   font-size: 0.875rem;
 } /* Navigation Text */
 
+.text-bold {
+  font-weight: bold;
+}
 .lang-he {
   direction: rtl;
 }

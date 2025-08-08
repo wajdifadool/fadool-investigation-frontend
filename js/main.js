@@ -133,16 +133,23 @@ document.querySelector('form').addEventListener('submit', async function (e) {
 
   const form = e.target
   const fullName = form['full-name'].value
-  const email = form['email'].value
+  const email = form['email'].value || ' '
   const phone = form['phone'].value
+  const message = form['message'].value || ' '
   const m_obj = {
     fullName,
     email,
     phone,
+    message,
   }
-  console.log(m_obj)
+
   try {
-    await axios.post('/api/contact', m_obj)
+    // await axios.post('http://localhost:10000/api/contact', m_obj)
+
+    await axios.post(
+      'https://fadool-investigation-backend.onrender.com/api/contact',
+      m_obj
+    )
 
     alert('ההודעה שלך נשלחה בהצלחה!')
     form.reset()
