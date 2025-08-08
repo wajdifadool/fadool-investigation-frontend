@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ally js for accsblity -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ally.js/1.4.1/ally.min.js"></script>
+
     <!-- Axios  -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
@@ -34,8 +38,8 @@
   <body>
     <!-- Ham Button TODO:-->
 
-    <div class="menu-btn">
-      <i class="fas fa-bars fa-2x"> </i>
+    <div id="menu-btn">
+      <i class="fas fa-bars fa-2x" aria-label="Naviagtion button"> </i>
     </div>
 
     <!-- Navigation Bar TODO: -->
@@ -353,30 +357,41 @@
       </div>
     </section>
     <!-- <div class="height60"></div> -->
-
     <section id="contact-us" class="contact-us normal-section">
+      <!-- <div class="height60"></div> -->
+      <div class="contact-us-head">
+        <p class="lang-he text-lg">
+          תתקשר אלינו 054-822-0240
+          <i class="fas fa-phone" aria-label="call us"> </i>
+        </p>
+      </div>
       <div class="container contact-grid lang-he">
         <!-- right hand side  -->
 
         <div class="contact-form lang-he">
           <p class="text-lg text-title">צור קשר</p>
           <p class="text-content text-md">
-            תשאיר את הפרטים שלך ואנו נחוזר אליך
+            תשאיר את הפרטים שלך ואנו נחוזר אליך, מבטיוחים דסקרטיות מלאה
           </p>
+          <p></p>
           <form method="POST" class="lang-he">
+            <!-- name -->
             <input type="text" name="full-name" placeholder="שם" required />
+            <!-- email -->
             <input type="email" name="email" placeholder="אימייל" required />
+            <!-- phone -->
             <input
               class="lang-he"
               type="tel"
               name="phone"
               placeholder="טלפון"
               required />
-            <!-- <textarea
+            <!--  -->
+            <textarea
               name="message"
-              placeholder="Your Message"
+              placeholder="הודעה "
               rows="5"
-              required></textarea> -->
+              required></textarea>
             <button type="submit">
               <span class="text-sm lang-he">שלח הודעה</span>
               <!-- <span class="text-sm lang-en">send message</span> -->
@@ -385,29 +400,38 @@
         </div>
       </div>
     </section>
-    <!-- <div class="height60"></div> -->
 
     <footer class="site-footer">
-      <div class="footer-container">
+      <!-- Right Side Content (Image & Contact Info) -->
+      <div class="footer-right">
         <!-- Logo -->
         <div class="footer-logo">
           <img src="./images/logo_white.png" alt="Fadool Investigation Logo" />
         </div>
 
-        <!-- Navigation Links -->
-        <div class="footer-links">
-          <!-- <ul>
-            <li><a href="#about-us">עלינו</a></li>
-            <li><a href="#services">שירותים</a></li>
-            <li><a href="#faq">שאלות נפוצות</a></li>
-            <li><a href="#contact">צור קשר</a></li>
-          </ul> -->
+        <!-- Contact Info -->
+        <div class="footer-contact">
+          <ul>
+            <li>
+              054-822-0240
+              <i class="fas fa-phone" aria-label="Call us"></i>
+            </li>
+            <li>
+              פקיעין
+              <i class="fas fa-map-marker-alt" aria-label="addres"></i>
+            </li>
+            <li>
+              <!--  -->
+              ofice@fadool-inv.com
+              <i class="fas fa-envelope" aria-label="Email us"></i>
+            </li>
+          </ul>
         </div>
+      </div>
 
-        <!-- Contact Info / Copyright -->
-        <div class="footer-info">
-          <p>&copy; 2025 Fadool Investigation כל הזכויות שמורות</p>
-        </div>
+      <!-- Footer Info (Copyright) -->
+      <div class="footer-info">
+        <p>&copy; 2025 Fadool Investigation כל הזכויות שמורות</p>
       </div>
     </footer>
   </body>

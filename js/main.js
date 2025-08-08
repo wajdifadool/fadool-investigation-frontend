@@ -32,22 +32,54 @@ window.addEventListener('scroll', () => {
   parallax.style.transform = `translateY(${scrolled * 0.05}px)`
 })
 
-// Smooth Scrolling
+// // Smooth Scrolling
+// $('.main-nav a').on('click', function (event) {
+//   if (this.hash !== '') {
+//     event.preventDefault()
+
+//     const hash = this.hash
+
+//     $('html, body').animate(
+//       {
+//         scrollTop: $(hash).offset().top,
+//       },
+//       400,
+//       function () {
+//         window.location.hash = hash
+//       }
+//     )
+//   }
+// })
+
 $('.main-nav a').on('click', function (event) {
   if (this.hash !== '') {
     event.preventDefault()
 
     const hash = this.hash
+    const target = $(hash)
 
-    $('html, body').animate(
-      {
-        scrollTop: $(hash).offset().top,
-      },
-      400,
-      function () {
-        window.location.hash = hash
-      }
-    )
+    if (target.length) {
+      const navHeight = 60 // Adjust this to match your fixed nav height
+      const scrollTo = target.offset().top - navHeight
+
+      $('html, body').animate(
+        {
+          scrollTop: scrollTo,
+        },
+        400,
+        function () {
+          // Update the hash in the URL, but only if it's different
+          history.replaceState(null, null, hash)
+        }
+      )
+    }
+  }
+})
+
+$(document).ready(function () {
+  // Remove the hash from the URL on page load
+  if (window.location.hash) {
+    history.replaceState(null, null, ' ') // Clears the hash without reloading
   }
 })
 
