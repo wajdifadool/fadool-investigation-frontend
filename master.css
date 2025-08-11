@@ -132,7 +132,7 @@ ul {
   background-position: center top;
   background-attachment: fixed;
   position: fixed;
-  top: -10vh;
+  top: -15vh;
   left: 0;
   width: 100%;
   height: 100%;
@@ -228,7 +228,7 @@ ul {
 
 .showcase {
   width: 100%;
-  height: 80vh;
+  height: 87vh;
 
   /* TODO: add image background */
 
@@ -548,7 +548,7 @@ i {
 /* Large devices (laptops) */
 @media (max-width: 992px) {
   .showcase {
-    height: 90vh;
+    height: 87vh;
   }
 
   .services-wraper .card {
@@ -589,6 +589,9 @@ i {
 
 /* Small devices (phones)		*/
 @media (max-width: 576px) {
+  .showcase {
+    height: 85vh;
+  }
   .services-wraper {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -601,17 +604,65 @@ i {
   }
 
   /* naviagniot  */
-  /* 
+
   #menu-btn {
-    display: block;
-    top: 0;
-    left: 10px;
+    position: fixed;
+    display: flex;
+    top: 15px;
+    right: 5;
+
+    align-items: center; /* horizintail */
+    z-index: 5;
   }
+
   .main-nav {
+    padding-left: 30px;
+  }
+
+  .menu-btn:hover {
+    opacity: 0.9;
+  }
+
+  /* Change the main menu view */
+  .main-menu {
+    display: block;
+    position: absolute;
     top: 0;
-    right: 0;
-    display: none;
-  } */
+    left: 0;
+    background-color: var(--border-color);
+    width: 50%;
+    height: 100vh;
+    padding: 30px;
+    margin: 0;
+    border: 1px solid #ccc;
+    opacity: 0.9;
+    transform: translateX(-500px);
+
+    /* Add the Animation */
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .main-menu li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+    font-size: 14px;
+  }
+
+  .main-menu li:last-child {
+    padding: 0;
+    padding-top: 20px;
+    border: 0px;
+  }
+
+  .show {
+    transform: translateX(-20px);
+  }
+
+  .shared-bg {
+    background: url('../images/abstract-dark-background-small-screen.png')
+      center center/cover no-repeat;
+    padding-top: -120px;
+  }
 }
 
 /* Extra small (phones)	 */
@@ -643,6 +694,7 @@ i {
   background-color: #111;
   color: #eee;
   padding: 30px 40px;
+  padding-bottom: 80px;
   display: flex;
   flex-direction: column;
   align-items: flex-end; /* Align the footer contents to the right */
@@ -691,3 +743,12 @@ i {
   color: #999;
   margin-top: 20px;
 }
+
+/*======= accessibility ======== 
+               _   _             
+ ___  ___  ___| |_(_) ___  _ __  
+/ __|/ _ \/ __| __| |/ _ \| '_ \ 
+\__ \  __/ (__| |_| | (_) | | | |
+|___/\___|\___|\__|_|\___/|_| |_|
+
+======= accessibility ======== */

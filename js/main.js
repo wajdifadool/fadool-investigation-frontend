@@ -1,3 +1,15 @@
+// main menu for small screens
+document.querySelector('#menu-btn').addEventListener('click', () => {
+  document.querySelector('.main-menu').classList.toggle('show')
+})
+
+// Add click listeners to all menu links
+document.querySelectorAll('.main-menu li a').forEach((link) => {
+  link.addEventListener('click', () => {
+    document.querySelector('.main-menu').classList.remove('show')
+  })
+})
+
 // Get button clicked
 const faqButtons = document.querySelectorAll('.faq-question')
 
@@ -151,10 +163,38 @@ document.querySelector('form').addEventListener('submit', async function (e) {
       m_obj
     )
 
-    alert('ההודעה שלך נשלחה בהצלחה!')
+    alert('תודה, ההודעה שלך נשלחה בהצלחה. אנו ניצור איתך קשר בהקדם.')
     form.reset()
   } catch (error) {
     alert('שגיאה בשליחת ההודעה. נסה שוב מאוחר יותר.')
     console.error(error)
   }
 })
+
+// let currentFontSize = 100
+
+// document
+//   .getElementById('accessibility-toggle')
+//   .addEventListener('click', () => {
+//     const panel = document.getElementById('accessibility-panel')
+//     panel.hidden = !panel.hidden
+//   })
+
+// function changeFontSize(direction) {
+//   currentFontSize += direction * 10
+//   document.body.style.fontSize = currentFontSize + '%'
+// }
+
+// function toggleContrast() {
+//   document.body.classList.toggle('high-contrast')
+// }
+
+// function toggleGrayscale() {
+//   document.body.classList.toggle('grayscale')
+// }
+
+// function resetAccessibility() {
+//   document.body.style.fontSize = ''
+//   document.body.classList.remove('high-contrast', 'grayscale')
+//   currentFontSize = 100
+// }
