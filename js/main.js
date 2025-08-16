@@ -200,5 +200,4 @@ document.querySelector('form').addEventListener('submit', async function (e) {
 // }
 
 // Update the current Year
-
 document.getElementById('currentYear').textContent = new Date().getFullYear()
