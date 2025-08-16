@@ -458,7 +458,7 @@
 
     <footer class="site-footer">
       <!-- Right Side Content (Image & Contact Info) -->
-      <div class="footer-right">
+      <div class="footer-right text-base">
         <!-- Logo -->
         <div class="footer-logo">
           <img src="./images/logo_white.png" alt="Fadool Investigation Logo" />
@@ -477,23 +477,13 @@
 
             <li>
               <!--  -->
-              <a
-                href="mailto:office@fadool-inv.com"
-                class="mail-link"
-                onclick="handleCallClick()">
+              <a href="mailto:office@fadool-inv.com" class="mail-link">
                 office@fadool-inv.com
               </a>
-
               <i class="fas fa-envelope" aria-label="Email us"></i>
             </li>
             <li>
-              <a
-                href="tel:+972548220240"
-                class="phone-link"
-                onclick="handleCallClick()">
-                054-8220-240
-              </a>
-
+              <a href="tel:+972548220240" class="phone-link"> 054-8220-240 </a>
               <i class="fas fa-phone" aria-label="Call us"></i>
             </li>
 
@@ -515,7 +505,9 @@
 
       <!-- Footer Info (Copyright) -->
       <div class="footer-info">
-        <p>&copy; 2025 כל הזכויות שמורות פדול חקירות</p>
+        <p>
+          &copy; <span id="currentYear"></span> כל הזכויות שמורות פדול חקירות
+        </p>
       </div>
     </footer>
 

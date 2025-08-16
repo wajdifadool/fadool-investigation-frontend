@@ -198,3 +198,7 @@ document.querySelector('form').addEventListener('submit', async function (e) {
 //   document.body.classList.remove('high-contrast', 'grayscale')
 //   currentFontSize = 100
 // }
+
+// Update the current Year
+
+document.getElementById('currentYear').textContent = new Date().getFullYear()

@@ -602,8 +602,8 @@ i {
     padding-left: 30px;
   }
 
-  .menu-btn:hover {
-    opacity: 0.9;
+  #menu-btn:hover {
+    opacity: 0.5;
   }
 
   /* Change the main menu view */
@@ -710,6 +710,7 @@ i {
 
 .footer-logo img {
   width: 80px;
+  height: auto;
   margin-bottom: 20px;
 }
 
@@ -719,29 +720,35 @@ i {
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
   align-items: flex-end; /* Align contact info to the right */
 }
 
 .footer-contact li {
-  font-size: 14px;
-  color: #ccc;
+  color: var(--text);
   display: flex;
   align-items: center;
   gap: 10px;
+  transition: all 0.5s ease; /* Smooth transition */
+}
+.footer-contact li a {
+  display: inline-block;
+  text-align: right; /* Ensure text inside <a> is aligned to the right */
+  word-wrap: break-word; /* Allow long words to break if necessary */
+  hyphens: auto; /* Auto hyphenation for better text wrapping */
 }
 
-.footer-contact i {
-  font-size: 18px;
-  color: #ccc;
+/* Hover effect for icons */
+.footer-contact li:hover a,
+.footer-contact li:hover i {
+  color: var(--text-menu-hover);
 }
 
 /* Footer Info (Copyright) */
 .footer-info {
   text-align: center;
   width: 100%;
-  font-size: 12px;
-  color: #999;
+  color: white;
   margin-top: 20px;
 }
 
