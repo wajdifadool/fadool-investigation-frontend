@@ -504,6 +504,39 @@ i {
   font-weight: 300;
 }
 
+/* Video  */
+
+.video-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: black; /* black bars */
+  width: 100%;
+  max-width: 100%;
+  margin: 10px auto;
+}
+
+.video-wrapper video {
+  width: 100%; /* keep natural width */
+  height: 80vh; /* desktop default height */
+  max-width: 100%;
+  display: block; /* helps with centering */
+  margin: 0 auto; /* center in normal flow */
+}
+
+/* Fullscreen handling */
+.video-wrapper video:fullscreen,
+.video-wrapper video:-webkit-full-screen {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain; /* or 'cover' if you prefer cropping */
+  object-position: center;
+  padding: 0 !important;
+}
+
 /* .contact-form button:hover {
   background-color: var(--accent-color);
 } */
@@ -560,13 +593,26 @@ i {
 /* Medium devices (tablets)	*/
 @media (max-width: 780px) {
   .services-wraper .card {
-    height: 320px;
-  }
-}
-
-@media (max-width: 780px) {
-  .services-wraper .card {
     height: 340px;
+  }
+
+  .video-wrapper {
+    width: 100%;
+    height: 100vh; /* fill viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* hide overflow if video is larger */
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  .video-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding: 10px;
+    max-width: 100%;
   }
 }
 

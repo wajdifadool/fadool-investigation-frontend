@@ -64,23 +64,30 @@
 
     <!--  -->
 
+    <!-- Favicon for Google & browsers -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
     <link
       rel="icon"
       type="image/png"
       href="/favicon/favicon-96x96.png"
       sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon/favicon.ico" />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
       href="/favicon/apple-touch-icon.png" />
     <link rel="manifest" href="/favicon/site.webmanifest" />
 
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+
     <link rel="stylesheet" href="master.css" />
 
     <!-- SEO Title (appears in Google search results) -->
-    <title>פדול חקירות | חוקר פרטי בכל הארץ | דיסקרטיות מלאה</title>
+    <title>
+      פדול חקירות – מגלים את האמת בשבילכם. מומחים במעקבים, חקירות אישות, חקירות
+      כלכליות ועוד - דיסקרטיות מלאה
+    </title>
   </head>
 
   <body>
@@ -151,8 +158,13 @@
         </div>
       </div>
     </section>
-
-    <!-- TODO:add video here -->
+    <div class="video-wrapper">
+      <video id="player" controls crossorigin playsinline>
+        <source
+          src="https://storage.googleapis.com/fadool-investigation-bucket-1/intro-video.mp4"
+          type="video/mp4" />
+      </video>
+    </div>
 
     <section id="about-us" class="about-us normal-section">
       <div class="container">
@@ -505,7 +517,7 @@
                 target="_blank"
                 href="https://api.whatsapp.com/send?phone=972548220240"
                 class="phone-link">
-                <span class="lang-he"> שלח הודעה לואצאף </span>
+                <span class="lang-he"> שלח לנו הודעה </span>
               </a>
 
               <i
@@ -525,6 +537,23 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/gh/jerit-baiju/a11y-widget@latest/script.js"></script>
+
+    <!-- For Video player Plyr JS  -->
+
+    <!-- Plyr JS -->
+    <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+    <script>
+      const player = new Plyr('#player', {
+        controls: [
+          'play',
+          'progress',
+          'current-time',
+          'mute',
+          'volume',
+          'fullscreen',
+        ],
+      })
+    </script>
   </body>
 
   <!-- Jquery for smooth scrolling animation -->
@@ -534,5 +563,7 @@
     crossorigin="anonymous"></script>
      -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://vjs.zencdn.net/8.23.3/video.min.js"></script>
+
   <script src="js/main.js" charset="utf-8"></script>
 </html>
