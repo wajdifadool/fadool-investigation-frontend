@@ -523,6 +523,7 @@ i {
   max-width: 100%;
   display: block; /* helps with centering */
   margin: 0 auto; /* center in normal flow */
+  object-fit: center;
 }
 
 /* Fullscreen handling */
@@ -532,7 +533,7 @@ i {
   height: 100vh;
   display: block;
   margin: 0 auto;
-  object-fit: contain; /* or 'cover' if you prefer cropping */
+  object-fit: cover; /* or 'cover' if you prefer cropping */
   object-position: center;
   padding: 0 !important;
 }
@@ -595,25 +596,6 @@ i {
   .services-wraper .card {
     height: 340px;
   }
-
-  .video-wrapper {
-    width: 100%;
-    height: 80vh; /* fill viewport height */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden; /* hide overflow if video is larger */
-    margin: 0 auto;
-    max-width: 100%;
-  }
-
-  .video-wrapper video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    padding: 10px;
-    max-width: 100%;
-  }
 }
 
 /* Small devices (phones)		*/
@@ -629,7 +611,30 @@ i {
     height: 210px;
   }
   .container {
-    padding: 80px 25px;
+    padding: 40px 25px;
+  }
+
+  .video-wrapper {
+    width: 100%;
+    height: auto; /* fill viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* hide overflow if video is larger */
+    margin: 0 auto;
+    margin-top: 20px;
+    max-width: 100%;
+    background-color: transparent; /* black bars */
+  }
+
+  .video-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0;
+    max-width: 100%;
+    border: 4px solid var(--primary);
+    border-radius: 2%;
   }
 
   /* naviagniot  */
@@ -715,7 +720,7 @@ i {
 /* Extra small (phones)	 */
 @media (max-width: 480px) {
   .container {
-    padding: 80px 20px;
+    padding: 40px 20px;
   }
 
   .svg-icon.faq-icon {
