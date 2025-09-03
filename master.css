@@ -811,3 +811,9 @@ i {
 |___/\___|\___|\__|_|\___/|_| |_|
 
 ======= accessibility ======== */
+.video-warp {
+  display: flex;
+  justify-content: center;
+  background: black;
+  margin-top: 10px;
+}

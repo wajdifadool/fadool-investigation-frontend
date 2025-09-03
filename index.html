@@ -156,15 +156,22 @@
             חקירתית המותאמת אישית לכל תיק.
           </p>
         </div>
-        <div class="video-wrapper">
+
+        <div class="video-warp">
+          <video width="340" height="360" controls>
+            <source
+              src="https://storage.googleapis.com/fadool-inv-videos/introduction.mp4"
+              type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <!-- <div class="video-wrapper">
           <video id="player" controls crossorigin playsinline>
-            <!-- -->
-            <!-- ./intro-video.mp4 -->
             <source
               src="https://storage.googleapis.com/fadool-investigation-bucket-1/intro-video.mp4"
               type="video/mp4" />
           </video>
-        </div>
+        </div> -->
       </div>
     </section>
 
@@ -292,24 +299,7 @@
         </p>
       </div>
     </section>
-    <!-- <div class="height60"></div> -->
 
-    <!-- From the news -->
-    <!-- <section class="news dark">
-      <div class="container">
-        
-
-        <div class="news-inner">
-          <h3>Media</h3>
-          <div class="news-inner-images">
-            <img src="./images/lorem.png" alt="" />
-            <img src="./images/lorem.png" alt="" />
-            <img src="./images/lorem.png" alt="" />
-            <img src="./images/lorem.png" alt="" />
-          </div>
-        </div>
-      </div>
-    </section> -->
     <!--  frequent asked questions-->
     <section id="faq" class="faq parallax-section">
       <div class="container lang-he">
@@ -519,7 +509,7 @@
                 target="_blank"
                 href="https://api.whatsapp.com/send?phone=972548220240"
                 class="phone-link">
-                <span class="lang-he"> שלח לנו הודעה </span>
+                <span class="lang-he"> WhatsApp - צור קשר ב </span>
               </a>
 
               <i
@@ -537,6 +527,8 @@
         </p>
       </div>
     </footer>
+
+    <!-- accessblity  -->
 
     <script src="https://cdn.jsdelivr.net/gh/jerit-baiju/a11y-widget@latest/script.js"></script>
 
@@ -564,8 +556,16 @@
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
      -->
+
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://vjs.zencdn.net/8.23.3/video.min.js"></script>
-
+  <script>
+    nl_pos = 'bl'
+    nl_dir = 'https://fadool-inv.com/nl-files/'
+  </script>
+  <script
+    src="https://fadool-inv.com/nagishli.js?v=2.3"
+    charset="utf-8"
+    defer></script>
   <script src="js/main.js" charset="utf-8"></script>
 </html>
