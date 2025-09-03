@@ -111,7 +111,7 @@ ul {
 
 /* Full-page shared background behind everything */
 .shared-bg {
-  background: url('./images/abstract-dark-background.png');
+  background: url('./images/abstract-dark-background.jpg');
   background-size: cover;
   background-position: center top;
   background-attachment: fixed;
