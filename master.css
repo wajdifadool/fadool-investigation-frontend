@@ -111,7 +111,7 @@ ul {
 
 /* Full-page shared background behind everything */
 .shared-bg {
-  background: url('./images/abstract-dark-background.jpg');
+  background: url('./images/abstract-dark-background.webp');
   background-size: cover;
   background-position: center top;
   background-attachment: fixed;
@@ -276,7 +276,7 @@ ul {
 ======= about us  ======== */
 .about-us {
   position: relative;
-  background: url('./images/office-about-us.jpg') no-repeat center center/cover;
+  background: url('./images/office-about-us.webp') no-repeat center center/cover;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -642,14 +642,14 @@ i {
 
   /* TODO: change bg here  */
   .shared-bg {
-    background: url('../images/abstract-dark-background-small-screen.jpg')
+    background: url('../images/abstract-dark-background-small-screen.webp')
       center center/cover no-repeat;
     padding-top: -120px;
   }
 
   .shared-bg {
-    background: url('./images/abstract-dark-background-small-screen.jpg') center
-      center/cover no-repeat;
+    background: url('./images/abstract-dark-background-small-screen.webp')
+      center center/cover no-repeat;
 
     position: fixed;
     top: 0;
