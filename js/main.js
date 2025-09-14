@@ -63,7 +63,7 @@ window.addEventListener('scroll', () => {
 //   }
 // })
 
-$('.main-nav a').on('click', function (event) {
+$('.main-nav a, btn-contact').on('click', function (event) {
   if (this.hash !== '') {
     event.preventDefault()
 
@@ -139,35 +139,58 @@ window.addEventListener('resize', adjustFontAwesomeForMobile)
 /* 
 Sending From to backend 
 */
-
 document.querySelector('form').addEventListener('submit', async function (e) {
   e.preventDefault()
 
   const form = e.target
+  const submitBtn = document.getElementById('submit-btn')
+  const btnText = submitBtn.querySelector('.btn-text')
+  const btnLoading = submitBtn.querySelector('.btn-loading')
+  const messageBox = document.getElementById('form-message')
+
+  // Reset previous messages
+  messageBox.className = 'hidden'
+  messageBox.textContent = ''
+
+  // Show loading state
+  submitBtn.disabled = true
+  btnText.classList.add('hidden')
+  btnLoading.classList.remove('hidden')
+
   const fullName = form['full-name'].value
   const email = form['email'].value || ' '
   const phone = form['phone'].value
   const message = form['message'].value || ' '
-  const m_obj = {
-    fullName,
-    email,
-    phone,
-    message,
-  }
+
+  const m_obj = { fullName, email, phone, message }
 
   try {
-    // await axios.post('http://localhost:10000/api/contact', m_obj)
-
     await axios.post(
       'https://fadool-investigation-backend.onrender.com/api/contact',
       m_obj
     )
 
-    alert('תודה, ההודעה שלך נשלחה בהצלחה. אנו ניצור איתך קשר בהקדם.')
+    messageBox.className = 'success'
+    messageBox.textContent =
+      'תודה, ההודעה שלך נשלחה בהצלחה. אנו ניצור איתך קשר בהקדם.'
+
     form.reset()
   } catch (error) {
-    alert('שגיאה בשליחת ההודעה. נסה שוב מאוחר יותר.')
-    console.error(error)
+    messageBox.className = 'error'
+    messageBox.textContent = 'שגיאה בשליחת ההודעה. נסה שוב מאוחר יותר.'
+    // console.error(error)
+
+    // Hide form & show success message
+    // form.classList.add('hidden')
+    // Completely remove the form from the DOM
+    // form.remove()
+
+    // console.log(form.classList)
+  } finally {
+    // Reset button state
+    submitBtn.disabled = false
+    btnText.classList.remove('hidden')
+    btnLoading.classList.add('hidden')
   }
 })
 
@@ -201,3 +224,17 @@ document.querySelector('form').addEventListener('submit', async function (e) {
 
 // Update the current Year
 document.getElementById('currentYear').textContent = new Date().getFullYear()
+
+// WhatsApp button handler
+document.getElementById('btn-whatsapp').addEventListener('click', function () {
+  const phoneNumber = '972548220240'
+
+  const waUrl = `https://wa.me/${phoneNumber}`
+  window.open(waUrl, '_blank')
+})
+
+// Contact Us button handler
+document.getElementById('btn-contact').addEventListener('click', function () {
+  const contactSection = document.getElementById('contact-us')
+  contactSection.scrollIntoView({ behavior: 'smooth' })
+})

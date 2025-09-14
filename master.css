@@ -142,6 +142,40 @@ ul {
   margin-top: 2rem;
 }
 
+/* Shared style for floating buttons */
+.floating-btn {
+  position: fixed;
+  right: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.1s ease;
+  font-weight: 600;
+  z-index: 1000;
+}
+
+.floating-btn:hover {
+  transform: scale(1.05);
+}
+
+/* WhatsApp button */
+#btn-whatsapp {
+  bottom: 100px;
+  background: #25d366; /* WhatsApp green */
+}
+
+/* Contact Us button */
+#btn-contact {
+  bottom: 40px;
+  background: #ccc; /* Nice blue */
+  color: #141414;
+}
+
 /*======= Navigation  ======== 
                _   _             
  ___  ___  ___| |_(_) ___  _ __  
@@ -264,6 +298,12 @@ ul {
 
 .lang-he {
   direction: rtl;
+}
+
+.introduction-inner-parent {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 40px;
 }
 
 /*======= about us   ======== 
@@ -556,6 +596,13 @@ i {
   .faq-question p {
     margin-left: 10px;
   }
+
+  .introduction-inner-parent {
+    display: block;
+  }
+  .introduction-inner {
+    padding-bottom: 20px;
+  }
 }
 /* Medium devices (tablets)	*/
 @media (max-width: 780px) {
@@ -581,7 +628,6 @@ i {
   }
 
   /* naviagniot  */
-
   #menu-btn {
     position: fixed;
     display: flex;
@@ -743,7 +789,7 @@ i {
   text-align: center;
   width: 100%;
   color: white;
-  margin-top: 20px;
+  margin-top: 120px;
 }
 
 /*======= accessibility ======== 
@@ -757,6 +803,49 @@ i {
 .video-warp {
   display: flex;
   justify-content: center;
-  background: black;
-  margin-top: 10px;
+  background: #000;
+}
+
+#form-message {
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+#form-message.success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+#form-message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.hidden {
+  display: none;
+}
+
+/* SOCIAL MEDIA */
+.footer-social {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: right; /* center horizontally */
+  gap: 16px; /* spacing between icons */
+}
+
+.footer-social a {
+  color: white; /* match footer theme */
+  font-size: 1.5rem; /* icon size */
+  transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: var(--text-menu-hover);
 }

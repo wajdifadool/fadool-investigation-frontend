@@ -174,13 +174,24 @@
   </script>
 
   <body>
-    <!-- Ham Button TODO:-->
+    <!-- WhatsApp Button -->
+    <div id="btn-whatsapp" class="floating-btn">
+      <i class="fab fa-whatsapp"></i>
+      <span class="text-sm"> WhatsApp</span>
+    </div>
 
+    <!-- Contact Us Button -->
+    <div id="btn-contact" class="floating-btn">
+      <i class="fas fa-envelope"></i>
+      <span class="text-sm">צור קשר</span>
+    </div>
+
+    <!-- Ham Button-->
     <div id="menu-btn">
       <i class="fas fa-bars fa-2x" aria-label="Naviagtion button"> </i>
     </div>
 
-    <!-- Navigation Bar TODO: -->
+    <!-- Navigation Bar  -->
     <nav class="main-nav">
       <img
         src="./images/logo_white.webp"
@@ -224,33 +235,43 @@
     <!-- introduction -->
     <section class="introduction parallax-section">
       <div class="container">
-        <div class="introduction-inner">
-          <p class="text-lg lang lang-he">
-            האמת לא מתגלה בניחושים, אלא באמצעות חקירה מדויקת, חוקית ומבוססת
-            ראיות.
-          </p>
+        <div class="introduction-inner-parent">
+          <div class="introduction-inner">
+            <p class="text-lg lang lang-he">
+              האמת לא מתגלה בניחושים, אלא באמצעות חקירה מדויקת, חוקית ומבוססת
+              ראיות.
+            </p>
 
-          <p class="text-base lang lang-he">
-            <br />
-            מחפשים את האמת? בפדול חקירות לא משאירים מקום לספק.
+            <p class="text-base lang lang-he">
+              <br />
+              מחפשים את האמת? בפדול חקירות לא משאירים מקום לספק.
 
-            <br />
-            משרדנו פועל ברישיון משרד המשפטים, ומספק שירותי חקירה מתקדמים בתחום
-            האישות, הכלכלה, עסקים והמעקבים.
+              <br />
+              משרדנו פועל ברישיון משרד המשפטים, ומספק שירותי חקירה מתקדמים בתחום
+              האישות, הכלכלה, עסקים והמעקבים.
 
-            <br />
-            צוות המשרד כולל חוקרים פרטיים מנוסים, טכנולוגיה מתקדמת, וגישה
-            חקירתית המותאמת אישית לכל תיק.
-          </p>
-        </div>
-        <!-- TODO: adding poster   poster="./images/video-poster.jpg" -->
-        <div class="video-warp">
-          <video width="340" height="360" preload="none" controls>
-            <source
-              src="https://storage.googleapis.com/fadool-inv-videos/introduction.mp4"
-              type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+              <br />
+              צוות המשרד כולל חוקרים פרטיים מנוסים, טכנולוגיה מתקדמת, וגישה
+              חקירתית המותאמת אישית לכל תיק.
+            </p>
+          </div>
+          <!-- width="340"
+            height="360" -->
+          <div class="video-warp-parent">
+            <div class="video-warp">
+              <video
+                width="400"
+                height="540"
+                preload="none"
+                controls
+                poster="./images/poster-video.webp">
+                <source
+                  src="https://storage.googleapis.com/fadool-inv-videos/introduction.mp4"
+                  type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
         </div>
         <!-- <div class="video-wrapper">
           <video id="player" controls crossorigin playsinline>
@@ -536,26 +557,26 @@
           <p class="text-content text-md">
             מתחייבים לדיסקרטיות מלאה, ויחס אישי לכל לקוח
           </p>
-          <p></p>
+
           <form method="POST" class="lang-he">
-            <!-- name -->
             <input type="text" name="full-name" placeholder="שם" required />
-            <!-- email -->
             <input type="email" name="email" placeholder="אימייל" />
-            <!-- phone -->
             <input
               class="lang-he"
               type="tel"
               name="phone"
               placeholder="טלפון"
               required />
-            <!--  -->
             <textarea name="message" placeholder="הודעה " rows="5"></textarea>
-            <button type="submit">
-              <span class="text-sm lang-he">שלח הודעה</span>
-              <!-- <span class="text-sm lang-en">send message</span> -->
+
+            <button type="submit" id="submit-btn">
+              <span class="btn-text text-sm lang-he">שלח הודעה</span>
+              <span class="btn-loading hidden">⏳ שולח...</span>
             </button>
           </form>
+
+          <!-- Success / Error message -->
+          <div id="form-message" class="hidden text-md"></div>
         </div>
       </div>
     </section>
@@ -607,20 +628,48 @@
                 aria-label="Send whatsapp message"></i>
             </li>
           </ul>
+
+          <!-- Social Media Links -->
+          <div class="footer-social">
+            <a
+              href="https://www.facebook.com/fadool.investigations"
+              target="_blank"
+              aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/fadool.investigations/"
+              target="_blank"
+              aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
         </div>
       </div>
 
       <!-- Footer Info (Copyright) -->
       <div class="footer-info">
         <p>
-          &copy; <span id="currentYear"></span> כל הזכויות שמורות פדול חקירות
+          <span id="currentYear"></span> &copy; כל הזכויות שמורות פדול חקירות
         </p>
       </div>
     </footer>
 
     <!-- accessblity  -->
 
-    <script src="https://cdn.jsdelivr.net/gh/jerit-baiju/a11y-widget@latest/script.js"></script>
+    <!-- <script
+      type="text/javascript"
+      src="//acc.magixite.com/freeCode?oatk=w0rdpre55"></script> -->
+
+    <script
+      src="//acc.magixite.com/freeCode?oatk=w0rdpre55&amp;ver=1.0.6"
+      id="accessibility-js"></script>
+
+    <script id="accessibility-init-js-after">
+      setTimeout(function () {
+        octLoader({ language: 'he_il' })
+      }, 1000)
+    </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
     <script src="js/main.js" charset="utf-8" defer></script>
   </body>
