@@ -165,14 +165,11 @@ document.querySelector('form').addEventListener('submit', async function (e) {
   const m_obj = { fullName, email, phone, message }
 
   try {
-    await axios.post(
-      'https://fadool-investigation-backend.onrender.com/api/contact',
-      m_obj
-    )
+    await axios.post('https://api.fadool-inv.com/api/contact', m_obj)
 
     messageBox.className = 'success'
     messageBox.textContent =
-      'תודה, ההודעה שלך נשלחה בהצלחה. אנו ניצור איתך קשר בהקדם.'
+      'תודה, ההודעה שלך נשלחה בהצלחה. ניצור איתך קשר בהקדם.'
 
     form.reset()
   } catch (error) {
