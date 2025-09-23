@@ -235,3 +235,55 @@ document.getElementById('btn-contact').addEventListener('click', function () {
   const contactSection = document.getElementById('contact-us')
   contactSection.scrollIntoView({ behavior: 'smooth' })
 })
+
+/*
+ ____  _____ ___  
+/ ___|| ____/ _ \ 
+\___ \|  _|| | | |
+ ___) | |__| |_| |
+|____/|_____\___/ 
+
+*/
+function setupWhatsAppTracking() {
+  var waBtn = document.getElementById('whatsapp-btn')
+  if (waBtn) {
+    waBtn.addEventListener(
+      'click',
+      function () {
+        if (typeof fbq === 'function') {
+          fbq('track', 'Contact', {
+            content_name: 'WhatsApp',
+            contact_channel: 'whatsapp',
+          })
+        }
+        if (typeof gtag === 'function') {
+          gtag('event', 'contact', { method: 'whatsapp' })
+        }
+      },
+      { passive: true }
+    )
+  }
+}
+
+function setupFormTracking() {
+  var form = document.getElementById('contact-form')
+  if (form) {
+    form.addEventListener('submit', function () {
+      if (typeof fbq === 'function') {
+        fbq('track', 'Lead', {
+          content_name: 'Form Submit',
+          lead_type: 'contact_form',
+        })
+      }
+      if (typeof gtag === 'function') {
+        gtag('event', 'lead', { method: 'form_submit' })
+      }
+    })
+  }
+}
+
+// Call the functions when DOM is fully loaded
+document.addEventListener('DOMContentLoaded', function () {
+  setupWhatsAppTracking()
+  setupFormTracking()
+})
