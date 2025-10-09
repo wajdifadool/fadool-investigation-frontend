@@ -369,9 +369,30 @@ ul {
   flex-direction: column;
   background: var(--primary);
   border-radius: 3%;
-  /* width: 21vw; */
+
+  justify-content: space-between; /* pushes read_more to bottom */
+
   height: 300px;
-  padding: 20px;
+  padding-top: 5px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  position: relative;
+}
+.card-header {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.card-header i {
+  position: relative;
+  top: 5px; /* tweak this (1–3px) until perfect alignment */
+}
+
+/* content styling */
+.card-content {
+  flex-grow: 1; /* fills remaining space */
+  margin-top: 30px;
 }
 
 .services-wraper .card:hover {
@@ -379,6 +400,70 @@ ul {
 }
 .services-wraper .card .card-title {
   padding-top: 20px;
+}
+
+/*======= articles ======== 
+               _   _             
+ ___  ___  ___| |_(_) ___  _ __  
+/ __|/ _ \/ __| __| |/ _ \| '_ \ 
+\__ \  __/ (__| |_| | (_) | | | |
+|___/\___|\___|\__|_|\___/|_| |_|
+
+======= articles ======== */
+
+.articles {
+  background: var(--background);
+}
+
+.articles-wraper {
+  margin-top: 5vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 25px;
+}
+.articles-wraper .card {
+  display: flex;
+  flex-direction: column;
+  background: var(--primary);
+  border-radius: 3%;
+  /* width: 21vw; */
+  height: 300px;
+  padding: 20px;
+}
+
+.articles-wraper .card:hover {
+  cursor: pointer;
+}
+.articles-wraper .card .card-title {
+  padding-top: 20px;
+}
+.read_more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px; /* space between text and chevron */
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.read_more:hover {
+  color: var(--text-menu-hover); /* hover color */
+}
+
+/* Chevron styling */
+.read_more .chevron,
+.read_more i {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+/* Move chevron slightly on hover */
+.read_more:hover .chevron,
+.read_more:hover i {
+  transform: translateX(5px);
 }
 
 /*======= faq ======== 
@@ -848,4 +933,98 @@ button[disabled] {
 
 .footer-social a:hover {
   color: var(--text-menu-hover);
+}
+
+/* article  */
+
+/* === Article Section Styling === */
+.article-section {
+  color: #f5f5f5; /* light readable text */
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
+  max-width: 900px;
+  margin: 2rem auto;
+  line-height: 1.8;
+  direction: rtl; /* Hebrew text direction */
+}
+
+/* Headings */
+.article-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--text-menu-hover);
+  border-bottom: 2px solid var(--text-menu-hover);
+  display: inline-block;
+  padding-bottom: 0.25rem;
+}
+
+.article-section h3 {
+  font-size: 1.3rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--text-menu-hover);
+}
+
+/* Paragraphs and lists */
+.article-section p {
+  margin-bottom: 1rem;
+}
+
+.article-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.article-section ul li {
+  margin-bottom: 0.75rem;
+  padding-right: 1rem;
+  position: relative;
+}
+
+.article-section ul li::before {
+  content: '•';
+  color: var(--text-menu-hover);
+  position: absolute;
+  right: 0;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.article-section dl {
+  margin-top: 1rem;
+}
+
+.article-section dt {
+  font-weight: 600;
+  color: var(--text-menu-hover);
+  margin-top: 0.75rem;
+}
+
+.article-section dd {
+  margin: 0 0 0.75rem 0;
+}
+
+.breadcrumb {
+  margin-top: 2rem;
+  margin-right: 3rem;
+  font-size: 0.9rem;
+  color: #bbb;
+  margin-bottom: 1.5rem;
+  direction: rtl; /* Hebrew direction */
+}
+
+.breadcrumb a {
+  color: #00bfff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.breadcrumb a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.breadcrumb span {
+  color: #aaa;
 }
