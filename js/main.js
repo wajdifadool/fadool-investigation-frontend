@@ -258,6 +258,8 @@ function setupWhatsAppTracking() {
         }
         if (typeof gtag === 'function') {
           gtag('event', 'contact', { method: 'whatsapp' })
+
+          gtag('event', 'conversion_event_submit_lead_form')
         }
       },
       { passive: true }
@@ -277,6 +279,8 @@ function setupFormTracking() {
       }
       if (typeof gtag === 'function') {
         gtag('event', 'lead', { method: 'form_submit' })
+
+        gtag('event', 'conversion_event_submit_lead_form')
       }
     })
   }
