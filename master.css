@@ -1014,6 +1014,10 @@ button[disabled] {
   direction: rtl; /* Hebrew direction */
 }
 
+.breadcrumb_bottom {
+  margin-right: 1rem;
+}
+
 .breadcrumb a {
   color: #00bfff;
   text-decoration: none;
