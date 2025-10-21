@@ -663,6 +663,10 @@ i {
     height: 280px;
   }
 
+  .articles-wraper .card {
+    height: 360px;
+  }
+
   .about-us p {
     margin-left: 0;
   }
@@ -675,9 +679,18 @@ i {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .articles-wraper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
   .services-wraper .card {
     height: 260px;
   }
+
+  .articles-wraper .card {
+    height: 400px;
+  }
+
   .faq-question p {
     margin-left: 10px;
   }
@@ -708,6 +721,7 @@ i {
   .services-wraper .card {
     height: 210px;
   }
+
   .container {
     padding: 40px 25px;
   }
@@ -804,6 +818,9 @@ i {
 
   .services-wraper .card {
     height: 240px;
+  }
+  .articles-wraper .card {
+    height: 470px;
   }
 }
 
